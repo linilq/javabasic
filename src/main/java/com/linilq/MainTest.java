@@ -1,5 +1,6 @@
 package com.linilq;
 
+
 /**
  * @author lizhijian
  * @description
@@ -8,6 +9,5 @@ package com.linilq;
 public class MainTest {
 
     public static void main(String[] args) {
-
     }
 }
