@@ -19,9 +19,10 @@ public class ReentrantLockTest {
     public static void main(String[] args) throws InterruptedException {
 //        reEntryTest(false);
 //        lockInterruptlyThrowException(false);
-//        conditionAwaitIntercepted(false);
+        conditionAwaitIntercepted(false);
 //        writeNumLetter();
-        tryLockTimely(false);
+//        tryLockTimely(false);
+
     }
 
     public static void tryLockTimely(boolean useFair) {
@@ -59,6 +60,12 @@ public class ReentrantLockTest {
 
     }
 
+    /**
+     * 使用Condition的前提条件是必先获取锁；当condition.await()时，锁资源将会释放，但线程应处于waiting状态
+     *
+     * @param useFair
+     * @throws InterruptedException
+     */
     private static void conditionAwaitIntercepted(boolean useFair) throws InterruptedException {
         ReentrantLockTest test = new ReentrantLockTest(useFair);
         awaitCondition = reentrantLock.newCondition();
